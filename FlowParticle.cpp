@@ -298,11 +298,11 @@ public:
 			// when writing, currently relative values are stored!
 			ser.Value("m_activations", m_activations);
 #if 0
-			CryLogAlways("CDelayNode write: current time(ms): %f", curTime.GetMilliSeconds());
+			CryLogAlways("CFlowNode_SpawnParticleEffect write: current time(ms): %f", curTime.GetMilliSeconds());
 			Activations::iterator iter = m_activations.begin();
 			while (iter != m_activations.end())
 			{
-				CryLogAlways("CDelayNode write: ms=%d  timevalue(ms): %f", (*iter).first, (*iter).second.m_timeout.GetMilliSeconds());
+				CryLogAlways("CFlowNode_SpawnParticleEffect write: ms=%d  timevalue(ms): %f", (*iter).first, (*iter).second.m_timeout.GetMilliSeconds());
 				++iter;
 			}
 #endif
@@ -319,11 +319,11 @@ public:
 				// regular update is handled by CFlowGraph
 				ser.Value("m_activations", m_activations);
 #if 0
-				CryLogAlways("CDelayNode read: current time(ms): %f", curTime.GetMilliSeconds());
+				CryLogAlways("CFlowNode_SpawnParticleEffect read: current time(ms): %f", curTime.GetMilliSeconds());
 				Activations::iterator iter = m_activations.begin();
 				while (iter != m_activations.end())
 				{
-					CryLogAlways("CDelayNode read: ms=%d  timevalue(ms): %f", (*iter).first, (*iter).second.m_timeout.GetMilliSeconds());
+					CryLogAlways("CFlowNode_SpawnParticleEffect read: ms=%d  timevalue(ms): %f", (*iter).first, (*iter).second.m_timeout.GetMilliSeconds());
 					++iter;
 				}
 #endif
@@ -545,7 +545,7 @@ static void OnTimer(void* pUserData, IGameFramework::TimerID ref)
 		Activations::iterator iter = pThis->m_activations.find(ref);
 		if (iter == pThis->m_activations.end())
 		{
-			GameWarning("CFlowDelayNode::OnTimer: Stale reference %d", ref);
+			GameWarning("CFlowNode_SpawnParticleEffect::OnTimer: Stale reference %d", ref);
 			return;
 		}
 
