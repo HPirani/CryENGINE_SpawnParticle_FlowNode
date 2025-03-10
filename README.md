@@ -9,4 +9,4 @@
 
 ➡️ or you can replace FlowParticle.cpp file in your Code\CryEngine\CryFlowGraph\FlowSystem\Nodes folder and build it yourself.
 
-# Note : binaries is for CryENGINE 5.7 LTS Only.
+# Note : binaries are for CryENGINE 5.7 LTS Only.
